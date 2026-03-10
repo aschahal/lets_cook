@@ -1,12 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  webpack: (config, { isServer }) => {
-    if (isServer) {
-      config.externals = [...(config.externals || []), 'phaser'];
-    }
-    return config;
-  },
+  serverExternalPackages: ['phaser'],
 };
 
 export default nextConfig;
